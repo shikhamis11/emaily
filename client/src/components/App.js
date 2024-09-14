@@ -6,6 +6,7 @@ import * as actions from '../actions';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
+import ChatBotRobot from "./Chatbot.compoenent";
 
 class App extends Component {
 
@@ -16,12 +17,15 @@ class App extends Component {
   render () {
     return (
         <BrowserRouter>
-          <div className="container">
+          <div>
+            <ChatBotRobot />
+          </div>
+          { <div className="container">
             <Header />
             <Route exact path="/" render={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
-            <Route path="/surveys/new" component={SurveyNew} />
-          </div>
+            <Route path="/surveys/new" render={(props) => (<SurveyNew {...props} />)}/>
+          </div> }
         </BrowserRouter>
     );
   }

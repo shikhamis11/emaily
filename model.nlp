@@ -1,0 +1,709 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hello": {
+            "intent": "greet.hello",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greet.hello",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "greet.hello",
+            "domain": "default"
+          },
+          "bye": {
+            "intent": "greet.bye",
+            "domain": "default"
+          },
+          "goodby": {
+            "intent": "greet.bye",
+            "domain": "default"
+          },
+          "is,name,what,your": {
+            "intent": "bot.Shikha",
+            "domain": "default"
+          },
+          "are,who,you": {
+            "intent": "bot.name",
+            "domain": "default"
+          },
+          "are,how,you": {
+            "intent": "greet.howareyou",
+            "domain": "default"
+          },
+          "do,doe,side,this,what": {
+            "intent": "greet.about",
+            "domain": "default"
+          },
+          "for,goodby,now": {
+            "intent": "greet.bye",
+            "domain": "default"
+          },
+          "bye,care,take": {
+            "intent": "greet.bye",
+            "domain": "default"
+          },
+          "later,okay,see,you": {
+            "intent": "greet.bye",
+            "domain": "default"
+          },
+          "bye,for,now": {
+            "intent": "greet.bye",
+            "domain": "default"
+          },
+          "go,i,must": {
+            "intent": "greet.bye",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greet.hello": "default",
+          "greet.bye": "default",
+          "bot.Shikha": "default",
+          "bot.name": "default",
+          "greet.howareyou": "default",
+          "greet.about": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greet.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greet.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greet.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye",
+            "intent": "greet.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "goodbye",
+            "intent": "greet.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is your name?",
+            "intent": "bot.Shikha"
+          },
+          {
+            "domain": "default",
+            "utterance": "who are you?",
+            "intent": "bot.name"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are you?",
+            "intent": "greet.howareyou"
+          },
+          {
+            "domain": "default",
+            "utterance": "what does this side do?",
+            "intent": "greet.about"
+          },
+          {
+            "domain": "default",
+            "utterance": "goodbye for now",
+            "intent": "greet.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye bye take care",
+            "intent": "greet.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "okay see you later",
+            "intent": "greet.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye for now",
+            "intent": "greet.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "i must go",
+            "intent": "greet.bye"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hello": 1,
+              "hi": 1,
+              "hey": 1,
+              "bye": 1,
+              "goodby": 1,
+              "what": 1,
+              "is": 1,
+              "your": 1,
+              "name": 1,
+              "who": 1,
+              "are": 1,
+              "you": 1,
+              "how": 1,
+              "doe": 1,
+              "this": 1,
+              "side": 1,
+              "do": 1,
+              "for": 1,
+              "now": 1,
+              "take": 1,
+              "care": 1,
+              "okay": 1,
+              "see": 1,
+              "later": 1,
+              "i": 1,
+              "must": 1,
+              "go": 1
+            },
+            "intents": {
+              "greet.hello": 1,
+              "greet.bye": 1,
+              "bot.Shikha": 1,
+              "bot.name": 1,
+              "greet.howareyou": 1,
+              "greet.about": 1
+            },
+            "intentFeatures": {
+              "greet.hello": {
+                "hello": 1,
+                "hi": 1,
+                "hey": 1
+              },
+              "greet.bye": {
+                "bye": 1,
+                "goodby": 1,
+                "for": 1,
+                "now": 1,
+                "take": 1,
+                "care": 1,
+                "okay": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1,
+                "i": 1,
+                "must": 1,
+                "go": 1
+              },
+              "bot.Shikha": {
+                "what": 1,
+                "is": 1,
+                "your": 1,
+                "name": 1
+              },
+              "bot.name": {
+                "who": 1,
+                "are": 1,
+                "you": 1
+              },
+              "greet.howareyou": {
+                "how": 1,
+                "are": 1,
+                "you": 1
+              },
+              "greet.about": {
+                "what": 1,
+                "doe": 1,
+                "this": 1,
+                "side": 1,
+                "do": 1
+              }
+            },
+            "featuresToIntent": {
+              "hello": [
+                "greet.hello"
+              ],
+              "hi": [
+                "greet.hello"
+              ],
+              "hey": [
+                "greet.hello"
+              ],
+              "bye": [
+                "greet.bye"
+              ],
+              "goodby": [
+                "greet.bye"
+              ],
+              "for": [
+                "greet.bye"
+              ],
+              "now": [
+                "greet.bye"
+              ],
+              "take": [
+                "greet.bye"
+              ],
+              "care": [
+                "greet.bye"
+              ],
+              "okay": [
+                "greet.bye"
+              ],
+              "see": [
+                "greet.bye"
+              ],
+              "you": [
+                "greet.bye",
+                "bot.name",
+                "greet.howareyou"
+              ],
+              "later": [
+                "greet.bye"
+              ],
+              "i": [
+                "greet.bye"
+              ],
+              "must": [
+                "greet.bye"
+              ],
+              "go": [
+                "greet.bye"
+              ],
+              "what": [
+                "bot.Shikha",
+                "greet.about"
+              ],
+              "is": [
+                "bot.Shikha"
+              ],
+              "your": [
+                "bot.Shikha"
+              ],
+              "name": [
+                "bot.Shikha"
+              ],
+              "who": [
+                "bot.name"
+              ],
+              "are": [
+                "bot.name",
+                "greet.howareyou"
+              ],
+              "how": [
+                "greet.howareyou"
+              ],
+              "doe": [
+                "greet.about"
+              ],
+              "this": [
+                "greet.about"
+              ],
+              "side": [
+                "greet.about"
+              ],
+              "do": [
+                "greet.about"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hello",
+                "hi",
+                "hey",
+                "bye",
+                "goodby",
+                "what",
+                "is",
+                "your",
+                "name",
+                "who",
+                "are",
+                "you",
+                "how",
+                "doe",
+                "this",
+                "side",
+                "do",
+                "for",
+                "now",
+                "take",
+                "care",
+                "okay",
+                "see",
+                "later",
+                "i",
+                "must",
+                "go"
+              ],
+              "intents": [
+                "greet.hello",
+                "greet.bye",
+                "bot.Shikha",
+                "bot.name",
+                "greet.howareyou",
+                "greet.about"
+              ],
+              "perceptrons": [
+                [
+                  8.98788833618164,
+                  8.987215995788574,
+                  8.965315818786621,
+                  -5.1278462409973145,
+                  -5.09989070892334,
+                  -1.922957181930542,
+                  -1.0987387895584106,
+                  -1.0987387895584106,
+                  -1.0987387895584106,
+                  -0.8811855912208557,
+                  -1.7438149452209473,
+                  -2.6127724647521973,
+                  -0.8618146181106567,
+                  -0.8240859508514404,
+                  -0.8240859508514404,
+                  -0.8240859508514404,
+                  -0.8240859508514404,
+                  -0.966741681098938,
+                  -0.966741681098938,
+                  -0.8084322810173035,
+                  -0.8084322810173035,
+                  -0.8687679767608643,
+                  -0.8687679767608643,
+                  -0.8687679767608643,
+                  -1.739223837852478,
+                  -1.739223837852478,
+                  -1.739223837852478,
+                  5.219675575536443
+                ],
+                [
+                  -4.12626314163208,
+                  -4.10982084274292,
+                  -4.092729091644287,
+                  9.466629981994629,
+                  9.599519729614258,
+                  -1.7029109001159668,
+                  -0.8985058069229126,
+                  -0.8985058069229126,
+                  -0.8985058069229126,
+                  -1.5380040407180786,
+                  -3.0372495651245117,
+                  0.228617325425148,
+                  -1.466916561126709,
+                  -0.6804827451705933,
+                  -0.6804827451705933,
+                  -0.6804827451705933,
+                  -0.6804827451705933,
+                  0.27901017665863037,
+                  0.27901017665863037,
+                  0.3777078092098236,
+                  0.3777078092098236,
+                  3.2667038440704346,
+                  3.2667038440704346,
+                  3.2667038440704346,
+                  3.3454744815826416,
+                  3.3454744815826416,
+                  3.3454744815826416,
+                  4.262142154946209
+                ],
+                [
+                  -0.3179703950881958,
+                  -0.315744012594223,
+                  -0.31509530544281006,
+                  -0.3703407645225525,
+                  -0.33134621381759644,
+                  2.828707456588745,
+                  3.713862180709839,
+                  3.713862180709839,
+                  3.713862180709839,
+                  -0.12266074120998383,
+                  -0.25106361508369446,
+                  -0.35061290860176086,
+                  -0.1024160385131836,
+                  -0.8429089188575745,
+                  -0.8429089188575745,
+                  -0.8429089188575745,
+                  -0.8429089188575745,
+                  -0.1845911294221878,
+                  -0.1845911294221878,
+                  -0.12791401147842407,
+                  -0.12791401147842407,
+                  -0.08109382539987564,
+                  -0.08109382539987564,
+                  -0.08109382539987564,
+                  -0.16442883014678955,
+                  -0.16442883014678955,
+                  -0.16442883014678955,
+                  0.31539569948778556
+                ],
+                [
+                  -0.2750363349914551,
+                  -0.27438995242118835,
+                  -0.2736937701702118,
+                  -0.28118354082107544,
+                  -0.27528849244117737,
+                  -0.1728673130273819,
+                  -0.061272792518138885,
+                  -0.061272792518138885,
+                  -0.061272792518138885,
+                  8.583025932312012,
+                  3.0802767276763916,
+                  2.239716053009033,
+                  -5.506263732910156,
+                  -0.09622899442911148,
+                  -0.09622899442911148,
+                  -0.09622899442911148,
+                  -0.09622899442911148,
+                  -0.15144725143909454,
+                  -0.15144725143909454,
+                  -0.10923240333795547,
+                  -0.10923240333795547,
+                  -0.8388425707817078,
+                  -0.8388425707817078,
+                  -0.8388425707817078,
+                  -0.11909995973110199,
+                  -0.11909995973110199,
+                  -0.11909995973110199,
+                  0.27620302059982665
+                ],
+                [
+                  -0.2676534056663513,
+                  -0.26360130310058594,
+                  -0.2598514258861542,
+                  -0.3208147883415222,
+                  -0.28894487023353577,
+                  -0.2039080113172531,
+                  -0.06848430633544922,
+                  -0.06848430633544922,
+                  -0.06848430633544922,
+                  -5.47546911239624,
+                  3.119550943374634,
+                  2.2372512817382812,
+                  8.598726272583008,
+                  -0.11497583985328674,
+                  -0.11497583985328674,
+                  -0.11497583985328674,
+                  -0.11497583985328674,
+                  -0.18302232027053833,
+                  -0.18302232027053833,
+                  -0.11814731359481812,
+                  -0.11814731359481812,
+                  -0.865289032459259,
+                  -0.865289032459259,
+                  -0.865289032459259,
+                  -0.14318415522575378,
+                  -0.14318415522575378,
+                  -0.14318415522575378,
+                  0.23250011776757468
+                ],
+                [
+                  -0.22955705225467682,
+                  -0.222295343875885,
+                  -0.2152498960494995,
+                  -0.3385636508464813,
+                  -0.2785349190235138,
+                  2.127375602722168,
+                  -0.8189835548400879,
+                  -0.8189835548400879,
+                  -0.8189835548400879,
+                  -0.059775277972221375,
+                  -0.11940829455852509,
+                  -0.25196245312690735,
+                  -0.048209741711616516,
+                  2.9924278259277344,
+                  2.9924278259277344,
+                  2.9924278259277344,
+                  2.9924278259277344,
+                  -0.19862152636051178,
+                  -0.19862152636051178,
+                  -0.12093991786241531,
+                  -0.12093991786241531,
+                  -0.11260510236024857,
+                  -0.11260510236024857,
+                  -0.11260510236024857,
+                  -0.15052253007888794,
+                  -0.15052253007888794,
+                  -0.15052253007888794,
+                  0.188626873726201
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "bye"
+      ],
+      [
+        "en",
+        "goodbye"
+      ],
+      [
+        "en",
+        "what is your name?"
+      ],
+      [
+        "en",
+        "who are you?"
+      ],
+      [
+        "en",
+        "how are you?"
+      ],
+      [
+        "en",
+        "what does this side do?"
+      ],
+      [
+        "en",
+        "goodbye for now"
+      ],
+      [
+        "en",
+        "bye bye take care"
+      ],
+      [
+        "en",
+        "okay see you later"
+      ],
+      [
+        "en",
+        "bye for now"
+      ],
+      [
+        "en",
+        "i must go"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greet.hello": [
+          {
+            "answer": "Hello! How can I assist you?"
+          }
+        ],
+        "greet.bye": [
+          {
+            "answer": "Goodbye! Have a great day!"
+          },
+          {
+            "answer": "see you soon!"
+          }
+        ],
+        "bot.name": [
+          {
+            "answer": "I am your chatbot!"
+          }
+        ],
+        "bot.Shikha": [
+          {
+            "answer": "My name is Shikha!"
+          }
+        ],
+        "greet.howareyou": [
+          {
+            "answer": "I am good, thanks for asking!"
+          }
+        ],
+        "greet.about": [
+          {
+            "answer": "I am a chatbot that can help you with your queries!"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

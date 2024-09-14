@@ -5,7 +5,7 @@ import SurveyFormReview from './SurveyFormReview';
 import { reduxForm } from 'redux-form';
 
 class SurveyNew extends Component {
-    
+
     state = { showFormReview: false };
 
     renderContent() {
@@ -17,6 +17,7 @@ class SurveyNew extends Component {
     }
 
     render() {
+        console.log(this.state);
         return (
         <div>
             {this.renderContent()}
@@ -25,6 +26,4 @@ class SurveyNew extends Component {
     }
 }
 
-export default reduxForm({
-    form: 'surveyForm'
-})(SurveyNew);
+export default reduxForm({form: 'surveyForm'})(SurveyNew);
