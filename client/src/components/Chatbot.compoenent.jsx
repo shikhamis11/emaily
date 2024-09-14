@@ -6,7 +6,7 @@ class ChatBotRobot extends React.Component {
         super(props);
 this.state = {
             messageList: [],
-            socket: io("http://localhost:3000"),
+            socket: io(process.env.REDIRECT_DOMAIN),
             room: "user1",
         }
 }
