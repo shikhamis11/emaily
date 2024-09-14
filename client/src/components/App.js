@@ -17,15 +17,13 @@ class App extends Component {
   render () {
     return (
         <BrowserRouter>
-          <div>
-            <ChatBotRobot />
-          </div>
-          { <div className="container">
+          <div className="container">
             <Header />
+            <ChatBotRobot />
             <Route exact path="/" render={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" render={(props) => (<SurveyNew {...props} />)}/>
-          </div> }
+          </div>
         </BrowserRouter>
     );
   }
